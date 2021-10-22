@@ -28,6 +28,7 @@ M_type = int(input('Type of Meter\n \t1) Simple \n\tor\n\t2) X10\n'))
 #WATER_BILL
 print(f"----------------------------------------\nWater Bill\n----------------------------------------")
 Nos_m = int(input('Number of Meters '))
+t = 0
 i = 0
 for i in range(Nos_m):
   if Nos_m != 0:
@@ -42,13 +43,13 @@ for i in range(Nos_m):
       Rate = float(0.15)
       amount = int(round(wtr_use * Rate))
       print(f"({New_Reading}-{Last_Reading})\n  = {wtr_use} L\n\n({wtr_use})L×({Rate})\n")
-amount = amount + i
-print('                           ₹' , amount)
+      t = t + amount
+print('                           ₹' , t)
 
 #CALCULATIONS
 Balance = int(input("Enter Balance Amount "))
 current = int(input("Electricity Bill "))
-Total = Rent + amount + Balance + current
+Total = Rent + t + Balance + current
 
 if current != 0:
   print(f"----------------------------------------\nCurrent Bill            ₹{current}")
